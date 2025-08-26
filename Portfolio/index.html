@@ -1,112 +1,292 @@
-<html>
+<!DOCTYPE html>
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8;">
-    <title>Portfolio CHIUNG-YU CHEN</title>
-    <style>
-        body {
-            margin: 0.5%;
-        }
+  <meta http-equiv="content-type" content="text/html; charset=utf-8;">
+  <title>Portfolio CHIUNG-YU CHEN</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
 
-        div {
-            margin: 0.5%;
-            background-color: #000000;
-            position: relative;
-            float: left;
-            max-width: 32%;
-            aspect-ratio: 1.618;
-            overflow: hidden;
-        }
+    html,
+    body {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      font-family: monospace;
+    }
 
-        img.Thumbnail {
-            margin: auto;
-            max-width: 100%;
-        }
+    .wrapper {
+      display: flex;
+      height: 100vh;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
 
-        p {
-            position: absolute;
-            width: 100%;
-            background-color: #000000b3;
-            padding: 10px;
-            bottom: 0;
-            left: 0;
-            box-sizing: border-box;
-            color: #ffffff;
-            margin: 0;
-        }
-    </style>
+    .panel {
+      position: relative;
+      flex: 0 0 500px;
+      overflow: hidden;
+      scrollbar-gutter: stable;
+      scroll-snap-type: y mandatory;
+      scroll-snap-align: center;
+    }
+
+    .panel-dummy {
+      position: absolute;
+      z-index: 9999;
+      height: 100%;
+      place-content: center;
+      pointer-events: none;
+    }
+
+    .panel:hover {
+      overflow-y: auto;
+    }
+
+    .panel-title {
+      position: sticky;
+      z-index: 9999;
+      top: 0;
+      color: #ffffff;
+      background-color: #000000;
+      font-size: 3em;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .scrollBtn {
+      aspect-ratio: 1;
+      width: 5vw;
+      margin: 2vw;
+      border-radius: 50%;
+      border: none;
+      background-color: #0000004d;
+      color: #ffffff4d;
+      font-size: 3vw;
+      pointer-events: auto;
+      box-shadow: inset 0 0 0 0.5vw #ffffff4d;
+    }
+
+    .scrollBtn:hover {
+      opacity: 1;
+      background-color: #000000b3;
+      box-shadow: 0 0 0 0.5vw #ffffff;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .content {
+      position: relative;
+      display: grid;
+      background-color: #000000;
+      aspect-ratio: 1.618;
+      place-items: center;
+      border-radius: 10px;
+    }
+
+    .content-dummy {
+      margin: 2em;
+      text-align: center;
+      font-size: 1.5em;
+      color: #000000;
+    }
+
+    .content-title {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      bottom: 0;
+      color: #ffffff;
+      background-color: #00000080;
+      padding: 0.3em;
+      font-size: 2em;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .thumbnail {
+      width: 95%;
+    }
+
+    a:last-child .content-dummy {
+      aspect-ratio: 1.618;
+    }
+
+    @media (max-width: 900px),
+    (orientation: portrait) {
+      .panel {
+        flex: 0 0 90vw;
+      }
+
+      .content {
+        scroll-snap-align: center;
+      }
+    }
+  </style>
 </head>
 
+<script>
+  function scrollWarpperX(dir) {
+    const wrapper = document.querySelector('.wrapper');
+    const distance = window.innerWidth * 0.9 * dir;
+    wrapper.scrollBy({
+      top: 0,
+      left: distance,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
 <body>
-    <div>
-        <a href="https://www.youtube.com/playlist?list=PLtcqSt4nhtOauDc-qVK-6_axVnW8bFTZX" target="_blank">
-            <p>Real-time Cloth Simulation</p>
-            <img class="Thumbnail" src="./Image/Real-time Cloth Simulation.jpg">
-        </a>
+  <div class="wrapper">
+    <span style="margin-left: auto;"></span>
+    <div class="panel-dummy" style="left: 0;">
+      <button class="scrollBtn" onclick="scrollWarpperX(-1)">&lt;</button>
+    </div>
+    <div class="panel-dummy" style="right: 0;">
+      <button class="scrollBtn" onclick="scrollWarpperX(1)">&gt;</button>
     </div>
 
-    <div>
-        <a href="https://www.youtube.com/playlist?list=PLtcqSt4nhtOZ5PbtsM7VkuC2p8zMl9EeR" target="_blank">
-            <p>Operation: Nightowl</p>
-            <img class="Thumbnail" src="./Image/Operation Nightowl.jpg">
-        </a>
+    <!-- Shading panel -->
+    <div class="panel">
+      <span id="Shading"></span>
+      <p class="panel-title">Shading</p>
+      <div class="content-dummy"></div>
+
+      <a href="https://www.youtube.com/watch?v=X7qwlDCvniY" target="_blank">
+        <div class="content">
+          <p class="content-title">Custom Shaped Specular</p>
+          <img class="thumbnail" src="./Image/Custom Shaped Specular.jpg">
+        </div>
+      </a>
+      <div class="content-dummy"></div>
+
+      <a href="#Shading">
+        <div class="content-dummy">↑↑↑</div>
+      </a>
     </div>
 
-    <!-- <div>
-        <a href="https://youtu.be/klXv8BkHh5c" target="_blank">
-            <p>Operation: Nightowl - Tokyo Game Show 2018</p>
-            <img class="Thumbnail" src="./Image/Operation Nightowl - Tokyo Game Show 2018.jpg">
-        </a>
+    <!-- PCG panel -->
+    <!-- <div class="panel">
+      <span id="PCG"></span>
+      <p class="panel-title">PCG</p>
+      <div class="content-dummy"></div>
+
+      <a href="#PCG">
+        <div class="content-dummy">↑↑↑</div>
+      </a>
     </div> -->
 
-    <div>
-        <a href="https://youtu.be/QpKdzQJR8I0" target="_blank">
-            <p>Abandoned Temple</p>
-            <img class="Thumbnail" src="./Image/Abandoned Temple.jpg">
-        </a>
+    <!-- Physics Animation panel -->
+    <div class="panel">
+      <span id="Physics-Animation"></span>
+      <p class="panel-title">Physics Animation</p>
+      <div class="content-dummy"></div>
+
+      <a href="https://www.youtube.com/playlist?list=PLtcqSt4nhtOauDc-qVK-6_axVnW8bFTZX" target="_blank">
+        <div class="content">
+          <p class="content-title">Real-time Cloth Simulation</p>
+          <img class="thumbnail" src="./Image/Real-time Cloth Simulation.jpg">
+        </div>
+      </a>
+      <div class="content-dummy"></div>
+
+      <a href="#Physics-Animation">
+        <div class="content-dummy">↑↑↑</div>
+      </a>
+
     </div>
 
-    <div>
-        <a href="https://www.youtube.com/watch?v=ICxrZLyydLg" target="_blank">
-            <p>VR Housing and Yacht Exhibition</p>
-            <img class="Thumbnail" src="./Image/VR Housing and Yacht Exhibition.jpg">
-        </a>
+    <!-- Project panel -->
+    <div class="panel">
+      <span id="Project"></span>
+      <p class="panel-title">Project</p>
+      <div class="content-dummy"></div>
+
+      <a href="https://www.youtube.com/playlist?list=PLtcqSt4nhtOZ5PbtsM7VkuC2p8zMl9EeR" target="_blank">
+        <div class="content">
+          <p class="content-title">Operation: Nightowl</p>
+          <img class="thumbnail" src="./Image/Operation Nightowl.jpg">
+        </div>
+      </a>
+      <div class="content-dummy"></div>
+
+      <a href="https://youtu.be/QpKdzQJR8I0" target="_blank">
+        <div class="content">
+          <p class="content-title">Abandoned Temple</p>
+          <img class="thumbnail" src="./Image/Abandoned Temple.jpg">
+        </div>
+      </a>
+      <div class="content-dummy"></div>
+
+      <a href="https://www.youtube.com/watch?v=ICxrZLyydLg" target="_blank">
+        <div class="content">
+          <p class="content-title">VR Housing and Yacht Exhibition</p>
+          <img class="thumbnail" src="./Image/VR Housing and Yacht Exhibition.jpg">
+        </div>
+      </a>
+      <div class="content-dummy"></div>
+
+      <a href="https://garyxchen.github.io/3DP/" target="_blank">
+        <div class="content">
+          <img class="thumbnail" src="./Image/WebGL 3D Displayer.jpg">
+          <p class="content-title">WebGL 3D Displayer</p>
+        </div>
+      </a>
+      <div class="content-dummy"></div>
+
+      <a href="./Image/Tag-based Database.jpg" target="_blank">
+        <div class="content">
+          <img class="thumbnail" src="./Image/Tag-based Database.jpg">
+          <p class="content-title">Tag-based Database</p>
+        </div>
+      </a>
+      <div class="content-dummy"></div>
+
+      <a href="#Project">
+        <div class="content-dummy">↑↑↑</div>
+      </a>
     </div>
 
-    <div>
-        <a href="./Image/Tag-based Database.jpg" target="_blank">
-            <img class="Thumbnail" src="./Image/Tag-based Database.jpg">
-            <p>Tag-based Database</p>
-        </a>
+    <!-- Other panel -->
+    <div class="panel">
+      <span id="Other"></span>
+      <p class="panel-title">Other</p>
+      <div class="content-dummy"></div>
+
+      <a href="https://www.youtube.com/playlist?list=PLtcqSt4nhtOamOwH9vqEGT5sjdUKqj_0i" target="_blank">
+        <div class="content">
+          <img class="thumbnail" src="./Image/DCC Tool.jpg">
+          <p class="content-title">DCC Tool</p>
+        </div>
+      </a>
+      <div class="content-dummy"></div>
+
+      <a href="https://garyxchen.github.io/File/rayTracing.zip" download>
+        <div class="content">
+          <img class="thumbnail" src="./Image/Ray Tracing.jpg">
+          <p class="content-title">Ray Tracing</p>
+        </div>
+      </a>
+      <div class="content-dummy"></div>
+
+      <a href="https://garyxchen.github.io/File/seamCarving.zip" download>
+        <div class="content">
+          <img class="thumbnail" src="./Image/Seam Carving.jpg">
+          <p class="content-title">Seam Carving</p>
+        </div>
+      </a>
+      <div class="content-dummy"></div>
+
+      <a href="#Other">
+        <div class="content-dummy">↑↑↑</div>
+      </a>
     </div>
 
-    <div>
-        <a href="https://www.youtube.com/playlist?list=PLtcqSt4nhtOamOwH9vqEGT5sjdUKqj_0i" target="_blank">
-            <img class="Thumbnail" src="./Image/DCC Tool.jpg">
-            <p>DCC Tool</p>
-        </a>
-    </div>
-
-    <div>
-        <a href="https://garyxchen.github.io/3DP/" target="_blank">
-            <img class="Thumbnail" src="./Image/WebGL 3D Displayer.jpg">
-            <p>WebGL 3D Displayer</p>
-        </a>
-    </div>
-
-    <div>
-        <a href="https://garyxchen.github.io/File/rayTracing.zip" download>
-            <img class="Thumbnail" src="./Image/Ray Tracing.jpg">
-            <p>Ray Tracing</p>
-        </a>
-    </div>
-
-    <div>
-        <a href="https://garyxchen.github.io/File/seamCarving.zip" download>
-            <img class="Thumbnail" src="./Image/Seam Carving.jpg">
-            <p>Seam Carving</p>
-        </a>
-    </div>
+    <span style="margin-right: auto;"></span>
+  </div>
 </body>
 
 </html>
