@@ -85,13 +85,7 @@
       aspect-ratio: 1.618;
       place-items: center;
       border-radius: 10px;
-    }
-
-    .content-dummy {
-      margin: 2em;
-      text-align: center;
-      font-size: 1.5em;
-      color: #000000;
+      margin: 1em 0 1em 0;
     }
 
     .content-title {
@@ -106,11 +100,14 @@
       border-radius: 0 0 10px 10px;
     }
 
-    .thumbnail {
+    .content-thumbnail {
       width: 95%;
     }
 
-    a:last-child .content-dummy {
+    .content-bottom {
+      text-align: center;
+      font-size: 1.5em;
+      color: #000000;
       aspect-ratio: 1.618;
     }
 
@@ -118,6 +115,10 @@
     (orientation: portrait) {
       .panel {
         flex: 0 0 90vw;
+      }
+
+      .panel-dummy {
+        display: none;
       }
 
       .content {
@@ -153,18 +154,16 @@
     <div class="panel">
       <span id="Shading"></span>
       <p class="panel-title">Shading</p>
-      <div class="content-dummy"></div>
 
       <a href="https://www.youtube.com/watch?v=X7qwlDCvniY" target="_blank">
         <div class="content">
           <p class="content-title">Custom Shaped Specular</p>
-          <img class="thumbnail" src="./Image/Custom Shaped Specular.jpg">
+          <img class="content-thumbnail" src="./Image/Custom Shaped Specular.jpg">
         </div>
       </a>
-      <div class="content-dummy"></div>
 
       <a href="#Shading">
-        <div class="content-dummy">↑↑↑</div>
+        <div class="content-bottom">↑↑↑</div>
       </a>
     </div>
 
@@ -172,10 +171,9 @@
     <!-- <div class="panel">
       <span id="PCG"></span>
       <p class="panel-title">PCG</p>
-      <div class="content-dummy"></div>
 
       <a href="#PCG">
-        <div class="content-dummy">↑↑↑</div>
+        <div class="content-bottom">↑↑↑</div>
       </a>
     </div> -->
 
@@ -183,18 +181,16 @@
     <div class="panel">
       <span id="Physics-Animation"></span>
       <p class="panel-title">Physics Animation</p>
-      <div class="content-dummy"></div>
 
       <a href="https://www.youtube.com/playlist?list=PLtcqSt4nhtOauDc-qVK-6_axVnW8bFTZX" target="_blank">
         <div class="content">
           <p class="content-title">Real-time Cloth Simulation</p>
-          <img class="thumbnail" src="./Image/Real-time Cloth Simulation.jpg">
+          <img class="content-thumbnail" src="./Image/Real-time Cloth Simulation.jpg">
         </div>
       </a>
-      <div class="content-dummy"></div>
 
       <a href="#Physics-Animation">
-        <div class="content-dummy">↑↑↑</div>
+        <div class="content-bottom">↑↑↑</div>
       </a>
 
     </div>
@@ -203,85 +199,76 @@
     <div class="panel">
       <span id="Project"></span>
       <p class="panel-title">Project</p>
-      <div class="content-dummy"></div>
 
       <a href="https://www.youtube.com/playlist?list=PLtcqSt4nhtOZ5PbtsM7VkuC2p8zMl9EeR" target="_blank">
         <div class="content">
           <p class="content-title">Operation: Nightowl</p>
-          <img class="thumbnail" src="./Image/Operation Nightowl.jpg">
+          <img class="content-thumbnail" src="./Image/Operation Nightowl.jpg">
         </div>
       </a>
-      <div class="content-dummy"></div>
 
       <a href="https://youtu.be/QpKdzQJR8I0" target="_blank">
         <div class="content">
           <p class="content-title">Abandoned Temple</p>
-          <img class="thumbnail" src="./Image/Abandoned Temple.jpg">
+          <img class="content-thumbnail" src="./Image/Abandoned Temple.jpg">
         </div>
       </a>
-      <div class="content-dummy"></div>
 
       <a href="https://www.youtube.com/watch?v=ICxrZLyydLg" target="_blank">
         <div class="content">
           <p class="content-title">VR Housing and Yacht Exhibition</p>
-          <img class="thumbnail" src="./Image/VR Housing and Yacht Exhibition.jpg">
+          <img class="content-thumbnail" src="./Image/VR Housing and Yacht Exhibition.jpg">
         </div>
       </a>
-      <div class="content-dummy"></div>
 
       <a href="https://garyxchen.github.io/3DP/" target="_blank">
         <div class="content">
-          <img class="thumbnail" src="./Image/WebGL 3D Displayer.jpg">
+          <img class="content-thumbnail" src="./Image/WebGL 3D Displayer.jpg">
           <p class="content-title">WebGL 3D Displayer</p>
         </div>
       </a>
-      <div class="content-dummy"></div>
 
       <a href="./Image/Tag-based Database.jpg" target="_blank">
         <div class="content">
-          <img class="thumbnail" src="./Image/Tag-based Database.jpg">
+          <img class="content-thumbnail" src="./Image/Tag-based Database.jpg">
           <p class="content-title">Tag-based Database</p>
         </div>
       </a>
-      <div class="content-dummy"></div>
 
       <a href="#Project">
-        <div class="content-dummy">↑↑↑</div>
+        <div class="content-bottom">↑↑↑</div>
       </a>
+
     </div>
 
     <!-- Other panel -->
     <div class="panel">
       <span id="Other"></span>
       <p class="panel-title">Other</p>
-      <div class="content-dummy"></div>
 
       <a href="https://www.youtube.com/playlist?list=PLtcqSt4nhtOamOwH9vqEGT5sjdUKqj_0i" target="_blank">
         <div class="content">
-          <img class="thumbnail" src="./Image/DCC Tool.jpg">
+          <img class="content-thumbnail" src="./Image/DCC Tool.jpg">
           <p class="content-title">DCC Tool</p>
         </div>
       </a>
-      <div class="content-dummy"></div>
 
       <a href="https://garyxchen.github.io/File/rayTracing.zip" download>
         <div class="content">
-          <img class="thumbnail" src="./Image/Ray Tracing.jpg">
+          <img class="content-thumbnail" src="./Image/Ray Tracing.jpg">
           <p class="content-title">Ray Tracing</p>
         </div>
       </a>
-      <div class="content-dummy"></div>
 
       <a href="https://garyxchen.github.io/File/seamCarving.zip" download>
         <div class="content">
-          <img class="thumbnail" src="./Image/Seam Carving.jpg">
+          <img class="content-thumbnail" src="./Image/Seam Carving.jpg">
           <p class="content-title">Seam Carving</p>
         </div>
       </a>
-      <div class="content-dummy"></div>
 
       <a href="#Other">
-        <div class="content-dummy">↑↑↑</div>
+        <div class="content-bottom">↑↑↑</div>
       </a>
     </div>
 
