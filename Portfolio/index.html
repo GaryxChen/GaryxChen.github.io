@@ -17,6 +17,7 @@
       width: 100vw;
       overflow: hidden;
       font-family: monospace;
+      background-color: #ffffff;
     }
 
     .wrapper {
@@ -47,10 +48,16 @@
       position: sticky;
       z-index: 9999;
       top: 0;
+      background-color: #ffffff;
+      cursor: pointer;
+    }
+
+    .panel-title p {
+      text-align: center;
+      font-size: 3em;
       color: #ffffff;
       background-color: #000000;
-      font-size: 3em;
-      border-radius: 0 0 10px 10px;
+      border-radius: 50% 50% 0 0;
     }
 
     .scrollBtn {
@@ -97,14 +104,23 @@
     }
 
     .content-thumbnail {
-      width: 95%;
+      margin: 3%;
+      max-width: 95%;
     }
 
     .content-bottom {
-      text-align: center;
-      font-size: 1.5em;
       color: #000000;
       aspect-ratio: 1.618;
+      cursor: pointer;
+    }
+
+    .content-bottom-title {
+      width: 100%;
+      text-align: center;
+      color: #ffffff;
+      background-color: #000000;
+      font-size: 3em;
+      border-radius: 0 0 50% 50%;
     }
 
     @media (max-width: 900px),
@@ -149,7 +165,9 @@
     <!-- Shading panel -->
     <div class="panel">
       <span id="Shading"></span>
-      <p class="panel-title">Shading</p>
+      <div class="panel-title" onclick="location.href='#Shading'">
+        <p>Shading</p>
+      </div>
 
       <a href="https://www.youtube.com/watch?v=X7qwlDCvniY" target="_blank">
         <div class="content">
@@ -158,25 +176,29 @@
         </div>
       </a>
 
-      <a href="#Shading">
-        <div class="content-bottom">↑↑↑</div>
-      </a>
+      <div class="content-bottom" onclick="location.href='#Shading'">
+        <p class="content-bottom-title">↑↑↑</p>
+      </div>
     </div>
 
     <!-- PCG panel -->
     <!-- <div class="panel">
       <span id="PCG"></span>
-      <p class="panel-title">PCG</p>
+      <div class="panel-title" onclick="location.href='#PCG'">
+        <p>PCG</p>
+      </div>
 
-      <a href="#PCG">
-        <div class="content-bottom">↑↑↑</div>
-      </a>
+      <div class="content-bottom" onclick="location.href='#PCG'">
+        <p class="content-bottom-title">↑↑↑</p>
+      </div>
     </div> -->
 
     <!-- Physics Animation panel -->
     <div class="panel">
       <span id="Physics-Animation"></span>
-      <p class="panel-title">Physics Animation</p>
+      <div class="panel-title" onclick="location.href='#Physics-Animation'">
+        <p>Physics Animation</p>
+      </div>
 
       <a href="https://www.youtube.com/playlist?list=PLtcqSt4nhtOauDc-qVK-6_axVnW8bFTZX" target="_blank">
         <div class="content">
@@ -185,16 +207,17 @@
         </div>
       </a>
 
-      <a href="#Physics-Animation">
-        <div class="content-bottom">↑↑↑</div>
-      </a>
-
+      <div class="content-bottom" onclick="location.href='#Physics-Animation'">
+        <p class="content-bottom-title">↑↑↑</p>
+      </div>
     </div>
 
     <!-- Project panel -->
     <div class="panel">
       <span id="Project"></span>
-      <p class="panel-title">Project</p>
+      <div class="panel-title" onclick="location.href='#Project'">
+        <p>Project</p>
+      </div>
 
       <a href="https://www.youtube.com/playlist?list=PLtcqSt4nhtOZ5PbtsM7VkuC2p8zMl9EeR" target="_blank">
         <div class="content">
@@ -231,16 +254,17 @@
         </div>
       </a>
 
-      <a href="#Project">
-        <div class="content-bottom">↑↑↑</div>
-      </a>
-
+      <div class="content-bottom" onclick="location.href='#Project'">
+        <p class="content-bottom-title">↑↑↑</p>
+      </div>
     </div>
 
     <!-- Other panel -->
     <div class="panel">
       <span id="Other"></span>
-      <p class="panel-title">Other</p>
+      <div class="panel-title" onclick="location.href='#Other'">
+        <p>Other</p>
+      </div>
 
       <a href="https://www.youtube.com/playlist?list=PLtcqSt4nhtOamOwH9vqEGT5sjdUKqj_0i" target="_blank">
         <div class="content">
@@ -263,9 +287,9 @@
         </div>
       </a>
 
-      <a href="#Other">
-        <div class="content-bottom">↑↑↑</div>
-      </a>
+      <div class="content-bottom" onclick="location.href='#Other'">
+        <p class="content-bottom-title">↑↑↑</p>
+      </div>
     </div>
 
     <span style="margin-right: auto;"></span>
